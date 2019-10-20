@@ -1,0 +1,15 @@
+
+<div>
+  <h1>Hello World!</h1>
+  <p *ngIf="errorStatus"><i>{{ errorStatus }}</i></p>
+  <table *ngIf="!errorStatus && (cobs$ | async) as cobs">
+    <tr>
+      <th>Id</th>
+      <th>Class of Business</th>
+    </tr>
+    <tr *ngFor="let cob of cobs | keyvalue: orderByKey">
+      <td>{{cob.key}}</td>
+      <td>{{cob.value}}</td>
+    </tr>
+  </table>
+</div>
