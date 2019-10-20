@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
 })
 export class MyComponent implements OnInit, OnDestroy {
 
-  private cobs: Map<string, string>; // id , cob
+  private cobs: Map<number, string>; // id , cob
   private cobSub: Subscription;
   private errorStatus: string = null;
 

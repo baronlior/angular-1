@@ -11,7 +11,7 @@ import { catchError } from 'rxjs/operators';
 // tslint:disable-next-line:component-class-suffix
 export class MyComponent2 implements OnInit {
 
-  private cobs$: Observable<string | Map<string, string>>;
+  private cobs$: Observable<string | Map<number, string>>;
   private errorStatus: string = null;
 
   constructor(private cobService: CobService) {}
