@@ -2,7 +2,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { colorValues } from 'src/assets/rgbcolor';
 import { MyComponent2 } from './my.component2';
 
-describe('MyComponent', () => {
+describe('MyComponent2', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

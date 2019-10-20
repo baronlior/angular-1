@@ -7,9 +7,9 @@
       <th>Id</th>
       <th>Class of Business</th>
     </tr>
-    <tr *ngFor="let cob of cobs | keyvalue: orderByKey">
-      <td>{{cob.key}}</td>
-      <td>{{cob.value}}</td>
+    <tr *ngFor="let key of cobs.keys()">
+      <td>{{key}}</td>
+      <td>{{cobs.get(key)}}</td>
     </tr>
   </table>
 </div>

@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CobService } from '../../services/cob.service';
 import { Subscription } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 @Component({
   selector: 'my-component',
@@ -16,17 +17,17 @@ export class MyComponent implements OnInit, OnDestroy {
   constructor(private cobService: CobService) {}
 
   ngOnInit() {
-    this.cobSub = this.cobService.getCobMap$().subscribe({
-      next: cobs => this.cobs = cobs,
-      error: _ => this.errorStatus = 'error loading data from the server'
-    });
+    this.cobSub = this.cobService.getCobMap$()
+      .pipe(delay(0))
+      .subscribe({
+        next: cobs => { console.log(Array.from(cobs.entries())); this.cobs = cobs; console.log(this.cobs); },
+        error: _ => this.errorStatus = 'error loading data from the server'
+      });
   }
 
   ngOnDestroy(): void {
     this.cobSub.unsubscribe();
   }
-
-  orderByKey = (k, v) => v;
 
 }
 

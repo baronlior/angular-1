@@ -16,7 +16,7 @@ export class CobService {
     const url = this.rootUrl + '/cob_categories/get_available_cobs';
     return this.httpClient.get(url).pipe(
       map(obj => new Map(Object.entries(obj)
-        .map((k, v) => [+k, v.toString()]))
+        .map( ([k, v]) => [+k, v]))
       ),
       catchError(this.logError)
     );
