@@ -37,8 +37,7 @@ describe('MyComponent', () => {
     expect(colorValues(getComputedStyle(rootElement.querySelector('h1')).color)).toEqual(colorValues('deeppink'));
   });
 
-  it('add table with 4 cells', async () => {
-    expect(rootElement.querySelector('table').innerHTML).toEqual('');
+  it('table with 4 cells', async () => {
     expect(rootElement.querySelectorAll('table tr td').length).toEqual(4, 'number of nested td elements');
     expect(rootElement.querySelectorAll('table').length).toEqual(1, 'exactly one table');
     expect(rootElement.querySelectorAll('table:empty').length).toEqual(0, 'no empty table elements');
