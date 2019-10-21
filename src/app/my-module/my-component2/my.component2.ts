@@ -22,7 +22,5 @@ export class MyComponent2 implements OnInit {
     );
   }
 
-  orderByKey = (k, v) => v;
-
 }
 
